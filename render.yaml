@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: ig-visitors
+    runtime: node
+    plan: starter
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /healthz
+    disk: { name: data, mountPath: /var/data, sizeGB: 1 }
+    envVars:
+      - { key: NODE_VERSION, value: "22" }
+      - { key: NODE_ENV, value: production }
+      - { key: DB_PATH, value: /var/data/data.db }
+      - { key: SESSION_SECRET, generateValue: true }
+      - { key: BASE_URL, sync: false }
+      - { key: ADMIN_PASSWORD, sync: false }
+      - { key: IG_APP_ID, sync: false }
+      - { key: IG_APP_SECRET, sync: false }

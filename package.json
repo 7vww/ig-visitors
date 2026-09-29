@@ -1,0 +1,8 @@
+{
+  "name": "ig-visitors",
+  "version": "1.0.0",
+  "private": true,
+  "engines": { "node": ">=22" },
+  "scripts": { "start": "node --env-file-if-exists=.env server.js" },
+  "dependencies": { "better-sqlite3": "^11.3.0", "express": "^4.21.0", "helmet": "^8.0.0" }
+}
